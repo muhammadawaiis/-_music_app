@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Music Player</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="music-player">
+        <div class="now-playing">
+            <div class="track-info">
+                <span id="track-title">Track Title</span> - <span id="track-artist">Artist</span>
+            </div>
+            <audio id="audio-player" controls>
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="controls">
+            <button id="prev" onclick="prevTrack()">Prev</button>
+            <button id="play-pause" onclick="playPause()">Play</button>
+            <button id="next" onclick="nextTrack()">Next</button>
+            <input type="range" id="volume" min="0" max="1" step="0.01" onchange="setVolume(this.value)">
+        </div>
+        <div class="search">
+            <input type="text" id="search-bar" placeholder="Search for music..." oninput="searchMusic(this.value)">
+        </div>
+        <div class="playlist" id="playlist">
+            <!-- Playlist items will be dynamically added here -->
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
